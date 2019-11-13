@@ -2,13 +2,31 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Ngbing</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <reference path="node_modules/bingmaps/types/MicrosoftMaps/Microsoft.Maps.All.d.ts" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" />
+  <title>setmapviewoptionsHTML</title>
+  <meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
+  <style type='text/css'>body{margin:0;padding:0;overflow:hidden;font-family:'Segoe UI',Helvetica,Arial,Sans-Serif}</style>
 </head>
 <body>
+  <div id='printoutPanel'></div>
+  
+  <div id='myMap' style='width: 100vw; height: 100vh;'></div>
+  <script type='text/javascript'>
+      function loadMapScenario() {
+          var map = new Microsoft.Maps.Map(document.getElementById('myMap'), {});
+          map.setView({
+              mapTypeId: Microsoft.Maps.MapTypeId.aerial,
+              center: new Microsoft.Maps.Location(35.027222, -111.0225),
+              zoom: 15
+          });
+          
+      }
+  </script>
+  <script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?key=Ap0AObt84NcDaUThCeWOj52ZqUHv6k4TJhjLibR-DghC-semgoj-0uPbIi8r0E4j&callback=loadMapScenario' async defer></script>
   <app-root></app-root>
 </body>
 </html>

@@ -1,21 +1,38 @@
-<div style="height: 500px">
+<!-- <i class="fa"></i>
+<div style="height: 600px">
   <x-map #xmap [Options]="_options">
-      <x-map-marker
-          [Latitude]="30" 
-          [Longitude]="90" 
-          [Title]="'My Marker'" 
-          [IconUrl]="'https://cdn0.iconfinder.com/data/icons/industrial-icons/164/2-128.png'" 
-          [IconInfo]="{
-              markerType: _markerTypeId.FontMarker,
-              fontName: 'FontAwesome',
-              fontSize: 48,
-              color: 'green',
-              markerOffsetRatio: { x: 0.5, y: 1 },
-              text: '\uF276'
-          }"> 
-          <info-box [DisableAutoPan]="true" [Title]="'My InfoBox'" [Description]="'Hi, this is the content of the <strong>info window</strong>. It is your responsibility to implement functionality such as close, etc...'">
-              <info-box-action [Label]="'Click Me'" (ActionClicked)="_click()"></info-box-action>
-          </info-box>   
-      </x-map-marker>
+    <x-map-marker 
+      [Latitude]="29.714994" 
+      [Longitude]="-95.46244"
+      [Title]="'My Marker'"
+      [IconInfo]="_iconInfo">
+    </x-map-marker>
   </x-map>
 </div>
+   -->
+
+   <!DOCTYPE html>
+<html>
+    <head>
+        <title>setmapviewoptionsHTML</title>
+        <meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
+        <style type='text/css'>body{margin:0;padding:0;overflow:hidden;font-family:'Segoe UI',Helvetica,Arial,Sans-Serif}</style>
+    </head>
+    <body>
+        <div id='printoutPanel'></div>
+        
+        <div id='myMap' style='width: 100vw; height: 100vh;'></div>
+        <script type='text/javascript'>
+            function loadMapScenario() {
+                var map = new Microsoft.Maps.Map(document.getElementById('myMap'), {});
+                map.setView({
+                    mapTypeId: Microsoft.Maps.MapTypeId.aerial,
+                    center: new Microsoft.Maps.Location(35.027222, -111.0225),
+                    zoom: 15
+                });
+                
+            }
+        </script>
+        <script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?key=Ap0AObt84NcDaUThCeWOj52ZqUHv6k4TJhjLibR-DghC-semgoj-0uPbIi8r0E4j&callback=loadMapScenario' async defer></script>
+    </body>
+</html>
